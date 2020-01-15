@@ -1,0 +1,82 @@
+$color-zero: grey;
+$color-one: darkgrey;
+
+$font-size-one: 14px;
+$font-size-two: 16px;
+
+$margin-one: 2px;
+$margin-two: 5px;
+
+$border-button: $margin-one solid $color-one;
+
+$width-card: 300px;
+$width-button-switch: 50px;
+
+$height-card: 50px;
+
+@mixin center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center-top {
+    justify-content: center;
+    align-items: start;
+}
+
+body {
+    background-color: $color-zero;
+    font-size: $font-size-two;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: 
+        $width-button-switch 
+        $width-card+$margin-two
+        $width-card+$margin-two
+        $width-card+$margin-two
+        $width-button-switch;
+    grid-template-rows: 1fr;
+    @include center-top;
+
+    &__button-backward {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    &__button-forward {
+        grid-column: -1 / -2;
+        grid-row: 1 / 2;
+    }
+}
+
+.fraction-card {
+    display: grid;
+    border: $border-button;
+    // height: $height-card;
+    width: $width-card;
+    margin: $margin-one;
+    padding: $margin-two;
+    // word-wrap: normal;
+    // white-space: nowrap;
+    @include center;
+
+    &__name {
+        display: grid;
+        @include center;
+    }
+
+    &__description {
+        display: grid;
+        @include center;
+        font-size: $font-size-one;
+        margin-top: $margin-two;
+        margin-bottom: $margin-two;
+    }
+
+    &__solar-sys {
+        display: grid;
+        @include center;
+    }
+}
