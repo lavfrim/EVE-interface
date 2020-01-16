@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { url } from '../../content';
 import Loading from '../loading';
+import PopupLink from '../popupLink';
+import { text } from '../../content';
 
 
 const blockName = 'fraction-card';
@@ -11,6 +13,7 @@ class Fraction extends PureComponent {
         this.state = {
             isOpen: false,
             system: '',
+            corporation: {},
         }
     }
 
@@ -18,11 +21,12 @@ class Fraction extends PureComponent {
         const { isOpen } = this.state;
         
         this.getSolarSystem();
+        this.getCorporationInfo();
         this.setState({isOpen: !isOpen})
     }
 
     getSolarSystem() {
-        const { info: { solar_system_id} } = this.props;
+        const { info: { solar_system_id } } = this.props;
         const { system } = this.state;
         if (!system) {
             const systemInfo = fetch(`${url.universe.systems}${solar_system_id}`);
@@ -34,10 +38,25 @@ class Fraction extends PureComponent {
                 .catch(err => console.log(err));
             }
     }
+
+    getCorporationInfo() {
+        const { info: { corporation_id } } = this.props;
+        const { system } = this.state;
+        if (!system) {
+            const systemInfo = fetch(`${url.corporation}${corporation_id}`);
+            systemInfo
+                .then(response => response.json())
+                .then(result => {
+                    this.setState({corporation: result});
+                })
+                .catch(err => window.console.log(err));
+            }
+    }
     
     render() {
-        const { isOpen, system } = this.state;
+        const { isOpen, system, corporation } = this.state;
         const { info: { name, description, faction_id } } = this.props;
+        const { card } = text;
 
         return (
             <div
@@ -48,8 +67,15 @@ class Fraction extends PureComponent {
                 <p className={`${blockName}__name`}>{name}</p>
                 {isOpen && 
                     <>
-                        <p className={`${blockName}__description`}>{description}</p>
-                        <p className={`${blockName}__solar-sys`}>{system ? system : <Loading />}</p>
+                        <div className={`${blockName}__corp-link`}>
+                            <p className={`${blockName}__corp-link-description`}>{card.ceoName}</p>
+                            {<PopupLink corporation={corporation} /> || <Loading />}
+                        </div>
+                        <p className={`${blockName}__description`}>{`${card.description} ${description}`}</p>
+                        <div className={`${blockName}__solar-sys`}>
+                            <p className={`${blockName}__solar-sys-description`}>{card.system}</p>
+                            {system ? system : <Loading />}
+                        </div>
                     </>
                 }
             </div>

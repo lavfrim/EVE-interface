@@ -20,12 +20,16 @@ class Carousel extends PureComponent {
         switch (event.target.id) {
             case backwardID:
                 if (start > 0) {
-                    this.setState({start: start - amountCards})
+                    this.setState({start: start - amountCards});
+                } else {
+                    this.setState({start: fractionsComponentArray.length - 1 - amountCards});
                 }
                 break;
             case forwardID: 
                 if (start + amountCards + 1 < fractionsComponentArray.length) {
-                    this.setState({start: start + amountCards})
+                    this.setState({start: start + amountCards});
+                } else {
+                    this.setState({start: 0});
                 }
                 break;
             default: break;
@@ -49,6 +53,8 @@ class Carousel extends PureComponent {
                 {fractionsComponentArray.length && fractionsComponentArray.map((fractionComponent, index) => {
                     if (index > start && index <= start + amountCards) {
                         return fractionComponent;
+                    } else { 
+                        return null
                     }
                 })}
                 <button
