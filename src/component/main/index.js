@@ -59,7 +59,6 @@ class Main extends PureComponent {
                         amountCards={CARDS_AMOUNT}
                     /> :
                     <Loading />}
-                
             </main>
         )
     }

@@ -15,7 +15,7 @@ class CEOCard extends PureComponent {
     }
     
     getRace() {
-        const { ceo: { race_id } } = this.props;
+        const { ceoInfo: { race_id } } = this.props;
         const racesInfo = fetch(url.universe.races);
         racesInfo
             .then(response => response.json())
@@ -31,7 +31,7 @@ class CEOCard extends PureComponent {
     }
     
     render() {
-        const { ceo: { name, birthday } } = this.props;
+        const { ceoInfo: { name, birthday } } = this.props;
         const { race } = this.state;
         const { card } = text;
         const fullDate = new Date(birthday);

@@ -3,8 +3,8 @@ import { text } from '../../content';
 
 
 const blockName = 'carousel';
-const backwardID = 'backward';
-const forwardID = 'forward';
+const backwardType = 'backward';
+const forwardType = 'forward'
 
 class Carousel extends PureComponent {
     constructor(props) {
@@ -14,19 +14,22 @@ class Carousel extends PureComponent {
         }
     }
 
-    handleClick(event) {
+    handleClick(type) {
         const { start } = this.state;
         const { amountCards, fractionsComponentArray } = this.props;
-        switch (event.target.id) {
-            case backwardID:
+        const end = fractionsComponentArray.length - 1;
+        switch (type) {
+            case backwardType:
                 if (start > 0) {
-                    this.setState({start: start - amountCards});
+                    this.setState({
+                        start: start - amountCards < 0 ? 0 : start - amountCards
+                    });
                 } else {
-                    this.setState({start: fractionsComponentArray.length - 1 - amountCards});
+                    this.setState({start: end - amountCards});
                 }
                 break;
-            case forwardID: 
-                if (start + amountCards + 1 < fractionsComponentArray.length) {
+            case forwardType:
+                if (start + amountCards < end) {
                     this.setState({start: start + amountCards});
                 } else {
                     this.setState({start: 0});
@@ -45,22 +48,17 @@ class Carousel extends PureComponent {
             <section className={blockName}>
                 <button 
                     className={`${blockName}__button-backward`}
-                    id={backwardID}
-                    onClick={(event) => this.handleClick(event)}
+                    onClick={() => this.handleClick(backwardType)}
                 >
                     {backward}
                 </button>
-                {fractionsComponentArray.length && fractionsComponentArray.map((fractionComponent, index) => {
-                    if (index > start && index <= start + amountCards) {
+                {fractionsComponentArray.length &&
+                    fractionsComponentArray.slice(start, start + amountCards).map(fractionComponent => {
                         return fractionComponent;
-                    } else { 
-                        return null
-                    }
                 })}
                 <button
                     className={`${blockName}__button-forward`}
-                    id={forwardID}
-                    onClick={(event) => this.handleClick(event)}
+                    onClick={() => this.handleClick(forwardType)}
                 >
                     {forward}
                 </button>

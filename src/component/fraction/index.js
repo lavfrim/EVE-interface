@@ -17,7 +17,7 @@ class Fraction extends PureComponent {
         }
     }
 
-    handleClick() {
+    handleClick = () => {
         const { isOpen } = this.state;
         
         this.getSolarSystem();
@@ -35,7 +35,7 @@ class Fraction extends PureComponent {
                 .then((result) => {
                     this.setState({system: result.name});
                 })
-                .catch(err => console.log(err));
+                .catch(err => window.console.log(err));
             }
     }
 
@@ -62,14 +62,14 @@ class Fraction extends PureComponent {
             <div
                 id={faction_id}
                 className={blockName}
-                onClick={() => {this.handleClick()}}
+                onClick={this.handleClick}
             >
                 <p className={`${blockName}__name`}>{name}</p>
                 {isOpen && 
                     <>
                         <div className={`${blockName}__corp-link`}>
-                            <p className={`${blockName}__corp-link-description`}>{card.ceoName}</p>
-                            {<PopupLink corporation={corporation} /> || <Loading />}
+                            <p className={`${blockName}__corp-link-description`}>{card.corporationName}</p>
+                            {corporation.name ? <PopupLink corporation={corporation} /> : <Loading />}
                         </div>
                         <p className={`${blockName}__description`}>{`${card.description} ${description}`}</p>
                         <div className={`${blockName}__solar-sys`}>

@@ -1,47 +1,36 @@
 import React, { PureComponent } from 'react';
 import { text } from '../../content';
-import { url } from '../../content';
 import Loading from '../loading';
-import PopupLink from '../popupLink';
 
 
 const blockName = 'corporation-card';
 
 
-class CorpotationCard extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            ceoInfo: {},
-        }
-    }
-
-    getCEOinfo() {
-        const { corporation: { ceo_id } } = this.props;
-        const infoCEO = fetch(`${url.characters}${ceo_id}`);
-        infoCEO
-            .then(response => response.json())
-            .then((result) => {
-                this.setState({ceoInfo: result});
-            })
-            .catch(err => window.console.log(err));
-    }
+class CorporationCard extends PureComponent {
     
     render() {
-        const { corporation: { name, member_count, description } } = this.props;
-        const { ceoInfo } = this.state;
+        const {
+            corporation: { name, member_count, description },
+            ceoInfo,
+            handleClickCEO,
+        } = this.props;
         const { card } = text;
-
-        if ( !ceoInfo.name ) {
-            this.getCEOinfo()
-        }
 
         return (
             <>
                 <p>{`${card.corporationName} ${name}`}</p>
                 <div className={`${blockName}__ceo-link`}>
-                    <p className={`${blockName}__ceo-link-description`}>{`CEO name:`}</p>
-                    {<PopupLink ceo={ceoInfo} />|| <Loading />}
+                    <p className={`${blockName}__ceo-link-description`}>
+                        {card.ceoName}
+                    </p>
+                    {ceoInfo.name ?
+                    <div
+                        className={`${blockName}__ceo-link-link`}
+                        onClick={(event) => handleClickCEO(event)}
+                    >
+                        {ceoInfo.name}
+                    </div> :
+                    <Loading />}
                 </div>
                 <p>{`${card.memberCount} ${member_count}`}</p>
                 <p>{`${card.description} ${description}`}</p>
@@ -50,4 +39,4 @@ class CorpotationCard extends PureComponent {
     }
 }
 
-export default (CorpotationCard);
+export default (CorporationCard);

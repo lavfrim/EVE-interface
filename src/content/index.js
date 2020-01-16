@@ -1,11 +1,12 @@
+const sourseURL = 'https://esi.evetech.net/dev/';
 export const url = {
     universe: {
-        fractions: 'https://esi.evetech.net/dev/universe/factions/',
-        systems: 'https://esi.evetech.net/dev/universe/systems/',
-        races: 'https://esi.evetech.net/dev/universe/races/',
+        fractions: `${sourseURL}universe/factions/`,
+        systems: `${sourseURL}universe/systems/`,
+        races: `${sourseURL}universe/races/`,
     },
-    corporation: 'https://esi.evetech.net/dev/corporations/',
-    characters: 'https://esi.evetech.net/dev/characters/',
+    corporation: `${sourseURL}corporations/`,
+    characters: `${sourseURL}characters/`,
 }
 
 export const text = {
@@ -25,4 +26,10 @@ export const text = {
         birthday: 'Birthday:',
         race: 'Race:',
     }
+}
+
+export const popUpStage = {
+    basic: 0,
+    cliked: 1,
+    returned: -1,
 }
