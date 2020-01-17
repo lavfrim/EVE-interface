@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { url } from '../../content';
 import { text } from '../../content';
 import Loading from '../loading';
@@ -54,3 +55,14 @@ class CEOCard extends PureComponent {
 }
 
 export default (CEOCard);
+
+CEOCard.propTypes = {
+    /**
+     * Object with info about CEO corporation
+     */
+    ceoInfo: PropTypes.shape({
+        name: PropTypes.string,
+        birthday: PropTypes.string,
+        race_id: PropTypes.number,
+    }),
+};

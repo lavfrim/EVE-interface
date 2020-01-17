@@ -5,7 +5,6 @@ import './style/EVE.scss';
 
 import Main from './component/main';
 import Header from './component/header';
-// import Loading from './component/loading';
 
 
 function EVE() {

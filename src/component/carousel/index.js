@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { text } from '../../content';
 
 
@@ -68,3 +69,14 @@ class Carousel extends PureComponent {
 }
 
 export default Carousel;
+
+Carousel.propTypes = {
+    /**
+     * Array of components for Carousel
+     */
+    fractionsComponentArray: PropTypes.arrayOf(PropTypes.node),
+    /**
+     * The number of components displayed in the Carousel
+     */
+    amountCards: PropTypes.number,
+};

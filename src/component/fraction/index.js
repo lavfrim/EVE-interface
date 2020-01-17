@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { url } from '../../content';
 import Loading from '../loading';
 import PopupLink from '../popupLink';
@@ -84,3 +85,16 @@ class Fraction extends PureComponent {
 }
 
 export default (Fraction);
+
+Fraction.propTypes = {
+    /**
+     * Object with info about fraction
+     */
+    info: PropTypes.shape({
+        name: PropTypes.string,
+        description: PropTypes.string,
+        faction_id: PropTypes.number,
+        corporation_id: PropTypes.number,
+        solar_system_id: PropTypes.number,
+    }),
+};

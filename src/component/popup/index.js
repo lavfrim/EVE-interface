@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { text } from '../../content';
 import Loading from '../loading';
 import { popUpStage } from '../../content';
@@ -11,10 +12,17 @@ const forward = 'forward';
 const backward = 'backward';
 const close = 'close';
 
-class PopUp extends PureComponent {
+function PopUp(props) {
+    const {
+        children,
+        stage,
+        handleClose,
+        handleClickForward,
+        handleClickBackward
+    } = props;
+
+    function handleClick(event) {
        
-    handleClick(event) {
-        const { handleClose, handleClickForward, handleClickBackward } = this.props;
         switch (event.target.id) {
             case outside: handleClose();
                 break;
@@ -28,48 +36,67 @@ class PopUp extends PureComponent {
         }
         event.stopPropagation();
     }
-    
-    render() {
-        const { children, stage } = this.props;
 
-        return (
+    return (
+        <div 
+            className={blockName}
+            onClick={(event) => handleClick(event)}
+            id={outside}
+        >
             <div 
-                className={blockName}
-                onClick={(event) => this.handleClick(event)}
-                id={outside}
+                className={`${blockName}__content-container`}
             >
-                <div 
-                    className={`${blockName}__content-container`}
+                <button
+                    className={`${blockName}__content-container__close-button`}
+                    id={close}
+                    
                 >
-                    <button
-                        className={`${blockName}__content-container__close-button`}
-                        id={close}
-                        
-                    >
-                        {text.buttons.close}
-                    </button>
+                    {text.buttons.close}
+                </button>
 
-                    <div className={`${blockName}__content-container__content`}>
-                        {children || <Loading />}
-                    </div>
-
-                    {stage === popUpStage.cliked && <button
-                        id={backward}
-                        className={`${blockName}__content-container__nav-button`}
-                    >
-                        {text.buttons.backward}
-                    </button>}
-
-                    {stage === popUpStage.returned && <button
-                        id={forward}
-                        className={`${blockName}__content-container__nav-button`}
-                    >
-                        {text.buttons.forward}
-                    </button>}
+                <div className={`${blockName}__content-container__content`}>
+                    {children || <Loading />}
                 </div>
+
+                {stage === popUpStage.cliked && <button
+                    id={backward}
+                    className={`${blockName}__content-container__nav-button`}
+                >
+                    {text.buttons.backward}
+                </button>}
+
+                {stage === popUpStage.returned && <button
+                    id={forward}
+                    className={`${blockName}__content-container__nav-button`}
+                >
+                    {text.buttons.forward}
+                </button>}
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default (PopUp);
+
+PopUp.propTypes = {
+    /**
+     * Component inside the PopUp
+     */
+    children: PropTypes.node,
+    /**
+     * Numerical designation of the rander stage of the content
+     */
+    stage: PropTypes.number,
+    /**
+     * Callback function that handle close PopUp
+     */
+    handleClose: PropTypes.func,
+    /**
+     * Callback function that handle click on the forward button
+     */
+    handleClickForward: PropTypes.func,
+    /**
+     * Callback function that handle click on the backward button
+     */
+    handleClickBackward: PropTypes.func,
+};

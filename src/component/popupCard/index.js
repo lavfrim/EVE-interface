@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { url } from '../../content';
 import CorporationCard from '../corporationCard';
 import CEOCard from '../ceoCard';
@@ -48,3 +49,18 @@ class PopupCard extends PureComponent {
 }
 
 export default (PopupCard);
+
+PopupCard.propTypes = {
+    /**
+     * Object with info about CEO corporation
+     */
+    corporation: PropTypes.object,
+    /**
+     * Callback function that handle click on the corpocation CEO name
+     */
+    handleClickCEO: PropTypes.func,
+    /**
+     * Numerical designation of the rander stage of the content
+     */
+    stage: PropTypes.number,
+};

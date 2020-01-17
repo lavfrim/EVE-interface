@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import PopUp from '../popup';
 import PopupCard from '../popupCard';
 import { popUpStage } from '../../content';
 
 
 const blockName = 'pop-up-link';
-
 
 
 class PopupLink extends PureComponent {
@@ -74,3 +74,12 @@ class PopupLink extends PureComponent {
 }
 
 export default (PopupLink);
+
+PopupLink.propTypes = {
+    /**
+     * Object with info about CEO corporation
+     */
+    corporation: PropTypes.shape({
+        name: PropTypes.string,
+    }),
+};
