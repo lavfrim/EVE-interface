@@ -46,7 +46,6 @@ class Fraction extends PureComponent {
         const { system } = this.state;
         if (!system) {
             const url = getURL('corporations', corporation_id);
-            console.log(url);
 
             const corporationInfo = fetch(url);
             corporationInfo
@@ -55,7 +54,7 @@ class Fraction extends PureComponent {
                     this.setState({corporation: result});
                 })
                 .catch(err => window.console.log(err));
-            }
+        }
     }
     
     render() {

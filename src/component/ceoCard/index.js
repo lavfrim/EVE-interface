@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import getURL from '../../content';
-import { text } from '../../content';
+import getURL, { text } from '../../content';
 import Loading from '../loading';
 
 

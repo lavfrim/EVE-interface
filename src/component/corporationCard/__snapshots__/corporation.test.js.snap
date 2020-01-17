@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CorporationCard should render correctly with moch corporation ceoInfo 1`] = `
+<CorporationCard
+  ceoInfo={
+    Object {
+      "name": "ceo name",
+    }
+  }
+  corporation={
+    Object {
+      "description": "corp description",
+      "member_count": 143,
+      "name": "corp name",
+    }
+  }
+>
+  <p>
+    Corporation name: corp name
+  </p>
+  <div
+    className="corporation-card__ceo-link"
+  >
+    <p
+      className="corporation-card__ceo-link-description"
+    >
+      CEO name:
+    </p>
+    <div
+      className="corporation-card__ceo-link-link"
+      onClick={[Function]}
+    >
+      ceo name
+    </div>
+  </div>
+  <p>
+    Member count: 143
+  </p>
+  <p>
+    Description: corp description
+  </p>
+</CorporationCard>
+`;

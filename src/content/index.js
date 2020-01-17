@@ -1,4 +1,4 @@
-const url = {
+export const url = {
     sourseURL: 'https://esi.evetech.net/dev/',
     universe: 'universe', 
     fractions: 'factions',

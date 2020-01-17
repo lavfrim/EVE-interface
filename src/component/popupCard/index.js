@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import getURL from '../../content';
 import CorporationCard from '../corporationCard';
 import CEOCard from '../ceoCard';
-import { popUpStage } from '../../content';
+import getURL, { popUpStage } from '../../content';
 
 
 class PopupCard extends PureComponent {

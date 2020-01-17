@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header should render correctly with error mesage 1`] = `
+<Connect(Header)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Header
+    dispatch={[Function]}
+    errorMessage="error message"
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <header
+      className="header"
+    >
+      <p>
+        EVE interface / interview task
+      </p>
+      <p>
+        error message
+      </p>
+    </header>
+  </Header>
+</Connect(Header)>
+`;
+
+exports[`header should render correctly without error mesage 1`] = `
+<Connect(Header)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Header
+    dispatch={[Function]}
+    errorMessage=""
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <header
+      className="header"
+    >
+      <p>
+        EVE interface / interview task
+      </p>
+    </header>
+  </Header>
+</Connect(Header)>
+`;
