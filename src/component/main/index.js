@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { setFractionsArray, setErrorMessage } from '../../redux';
 import { connect } from 'react-redux';
-import { url } from '../../content';
+import getURL from '../../content';
 
 import Loading from '../loading';
 import Fraction from '../fraction';
@@ -31,7 +31,8 @@ function Main(props) {
     const { fractionsComponentArray, setFractions, setMessage } = props;
 
     function getFractions() {
-        const fractionsInfo = fetch(url.universe.fractions);
+        const url = getURL('universe/fractions');
+        const fractionsInfo = fetch(url);
         fractionsInfo
         .then(response => response.json())
         .then(result => {

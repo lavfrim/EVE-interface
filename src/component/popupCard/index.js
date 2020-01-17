@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { url } from '../../content';
+import getURL from '../../content';
 import CorporationCard from '../corporationCard';
 import CEOCard from '../ceoCard';
 import { popUpStage } from '../../content';
@@ -16,7 +16,8 @@ class PopupCard extends PureComponent {
 
     getCEOinfo() {
         const { corporation: { ceo_id } } = this.props;
-        const infoCEO = fetch(`${url.characters}${ceo_id}`);
+        const url = getURL('characters', ceo_id);
+        const infoCEO = fetch(url);
         infoCEO
             .then(response => response.json())
             .then((result) => {

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { url } from '../../content';
+import getURL from '../../content';
 import Loading from '../loading';
 import PopupLink from '../popupLink';
 import { text } from '../../content';
@@ -30,7 +30,8 @@ class Fraction extends PureComponent {
         const { info: { solar_system_id } } = this.props;
         const { system } = this.state;
         if (!system) {
-            const systemInfo = fetch(`${url.universe.systems}${solar_system_id}`);
+            const url = getURL('universe/systems', solar_system_id);
+            const systemInfo = fetch(url);
             systemInfo
                 .then(response => response.json())
                 .then((result) => {
@@ -44,8 +45,11 @@ class Fraction extends PureComponent {
         const { info: { corporation_id } } = this.props;
         const { system } = this.state;
         if (!system) {
-            const systemInfo = fetch(`${url.corporation}${corporation_id}`);
-            systemInfo
+            const url = getURL('corporations', corporation_id);
+            console.log(url);
+
+            const corporationInfo = fetch(url);
+            corporationInfo
                 .then(response => response.json())
                 .then(result => {
                     this.setState({corporation: result});

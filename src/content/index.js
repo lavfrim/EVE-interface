@@ -1,12 +1,22 @@
-const sourseURL = 'https://esi.evetech.net/dev/';
-export const url = {
-    universe: {
-        fractions: `${sourseURL}universe/factions/`,
-        systems: `${sourseURL}universe/systems/`,
-        races: `${sourseURL}universe/races/`,
-    },
-    corporation: `${sourseURL}corporations/`,
-    characters: `${sourseURL}characters/`,
+const url = {
+    sourseURL: 'https://esi.evetech.net/dev/',
+    universe: 'universe', 
+    fractions: 'factions',
+    systems: 'systems',
+    races: 'races',
+    corporations: 'corporations',
+    characters: 'characters',
+}
+
+export default function getURL(adressString, id) {
+    let fullURL = url.sourseURL;
+    adressString.split('/').forEach(urlPart => {
+        fullURL += `${url[urlPart]}/`
+    });
+    if (id) {
+        fullURL += `${id}`;
+    }
+    return fullURL;
 }
 
 export const text = {

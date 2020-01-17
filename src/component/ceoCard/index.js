@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { url } from '../../content';
+import getURL from '../../content';
 import { text } from '../../content';
 import Loading from '../loading';
 
@@ -17,7 +17,8 @@ class CEOCard extends PureComponent {
     
     getRace() {
         const { ceoInfo: { race_id } } = this.props;
-        const racesInfo = fetch(url.universe.races);
+        const url = getURL('universe/races');
+        const racesInfo = fetch(url);
         racesInfo
             .then(response => response.json())
             .then((result) => {
