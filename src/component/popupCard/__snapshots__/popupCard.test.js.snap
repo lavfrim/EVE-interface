@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupCard should render correctly with stage = basic 1`] = `
+<PopupCard
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+  stage={0}
+>
+  <CorporationCard
+    ceoInfo={
+      Object {
+        "name": "ceo Name",
+      }
+    }
+    corporation={
+      Object {
+        "name": "corp name",
+      }
+    }
+  >
+    <p>
+      Corporation name: corp name
+    </p>
+    <div
+      className="corporation-card__ceo-link"
+    >
+      <p
+        className="corporation-card__ceo-link-description"
+      >
+        CEO name:
+      </p>
+      <div
+        className="corporation-card__ceo-link-link"
+        onClick={[Function]}
+      >
+        ceo Name
+      </div>
+    </div>
+    <p>
+      Member count: undefined
+    </p>
+    <p>
+      Description: undefined
+    </p>
+  </CorporationCard>
+</PopupCard>
+`;
+
+exports[`PopupCard should render correctly with stage = clicked 1`] = `
+<PopupCard
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+  stage={1}
+>
+  <CEOCard
+    ceoInfo={
+      Object {
+        "name": "ceo Name",
+      }
+    }
+  >
+    <p>
+      CEO name: ceo Name
+    </p>
+    <p>
+      Birthday: Invalid Date
+    </p>
+    <div
+      className="ceo-card__race"
+    >
+      <p
+        className="ceo-card__race-description"
+      >
+        Race:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+  </CEOCard>
+</PopupCard>
+`;

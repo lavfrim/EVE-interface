@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ca should render correctly with error mesage 1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Carousel should render correctly with  1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Carousel should render correctly with error mesage 1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Carousel should render correctly with mock  1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Carousel should render correctly with mock array of compo 1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Carousel should render correctly with mock array of components 1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;
+
+exports[`Main should render correctly with error mesage 1`] = `
+<Carousel
+  amountCards={3}
+  fractionsComponentArray={
+    Array [
+      <Component />,
+      <Component />,
+      <Component />,
+    ]
+  }
+>
+  <section
+    className="carousel"
+  >
+    <button
+      className="carousel__button-backward"
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+    <Component
+      key="1"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="2"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <Component
+      key="3"
+    >
+      <p>
+        smth
+      </p>
+    </Component>
+    <button
+      className="carousel__button-forward"
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+  </section>
+</Carousel>
+`;

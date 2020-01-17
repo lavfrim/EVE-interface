@@ -1,87 +1,71 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import PopUp from '../popup';
-import Loading from '../loading';
-import CorpotationCard from '../corporationCard';
-import CEOCard from '../ceoCard';
+import PopupCard from '../popupCard';
+import { popUpStage } from '../../content';
 
 
 const blockName = 'pop-up-link';
 
-const linksType = {
-    corporation: 'corporation',
-    ceo: 'ceo',
-}
 
 class PopupLink extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             isOpen: false,
-            component: <Loading />,
+            stage: popUpStage.basic,
         }
     }
 
-    getLinkInfo() {
-        const { corporation, ceo } = this.props;
-
-        if (corporation) {
-            return {
-                type: linksType.corporation,
-                name: corporation.name,
-            };
-        } else if (ceo) {
-            return {
-                type: linksType.ceo,
-                name: ceo.name,
-            };
-        }
-    }
-
-    closePopup() {
-        this.setState({isOpen: false});
+    closePopup = () => {
+        this.setState({
+            isOpen: false,
+            stage: popUpStage.basic,
+        });
     }
 
     handleClick(event) {
-        const { corporation, ceo } = this.props;
-        switch (event.target.id) {
-            case linksType.corporation:
-                this.setState({
-                    isOpen: true,
-                    component: <CorpotationCard corporation={corporation} />,
-                });
-                break;
-            case linksType.ceo:
-                this.setState({
-                    isOpen: true,
-                    component: <CEOCard ceo={ceo} />,
-                });
-                break;
-            default: break;
-        }
+        this.setState({isOpen: true});
         event.stopPropagation();
     }
 
-   
+    handleClickCEO = () => {
+        this.setState({stage: popUpStage.cliked});
+    }
+
+    handleClickForward = () => {
+        this.setState({stage: popUpStage.cliked});
+    }
+
+    handleClickBackward = () => {
+        this.setState({stage: popUpStage.returned});
+    }
 
     
     render() {
-        const { isOpen, component } = this.state;
-        
-
-        const linkInfo = this.getLinkInfo();
+        const { isOpen, stage } = this.state;
+        const { corporation } = this.props;
 
         return (
             <>
-                <p
-                    id={linkInfo.type}
+                <div
                     className={blockName}
-                    onClick={(event) => {this.handleClick(event)}}
+                    onClick={(event) => this.handleClick(event)}
                 >
-                    {linkInfo.name}
-                </p>
+                    {corporation.name}
+                </div>
                 {isOpen && 
-                    <PopUp handleClose={() => this.closePopup.call(this)}>
-                        {component}
+                    <PopUp
+                        handleClose={this.closePopup}
+                        handleClickForward={this.handleClickForward}
+                        handleClickBackward={this.handleClickBackward}
+                        stage={stage}
+                    >
+                        <PopupCard
+                            handleClickCEO={this.handleClickCEO}
+                            corporation={corporation}
+                            stage={stage}
+                        />
                     </PopUp>
                 }
             </>
@@ -90,3 +74,12 @@ class PopupLink extends PureComponent {
 }
 
 export default (PopupLink);
+
+PopupLink.propTypes = {
+    /**
+     * Object with info about CEO corporation
+     */
+    corporation: PropTypes.shape({
+        name: PropTypes.string,
+    }),
+};

@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopUp should render correctly with stage = basic 1`] = `
+<PopUp
+  stage={0}
+>
+  <div
+    className="pop-up"
+    id="outside"
+    onClick={[Function]}
+  >
+    <div
+      className="pop-up__content-container"
+    >
+      <button
+        className="pop-up__content-container__close-button"
+        id="close"
+      >
+        X
+      </button>
+      <div
+        className="pop-up__content-container__content"
+      >
+        <Component>
+          <p>
+            smth
+          </p>
+        </Component>
+      </div>
+    </div>
+  </div>
+</PopUp>
+`;
+
+exports[`PopUp should render correctly with stage = clicked 1`] = `
+<PopUp
+  stage={1}
+>
+  <div
+    className="pop-up"
+    id="outside"
+    onClick={[Function]}
+  >
+    <div
+      className="pop-up__content-container"
+    >
+      <button
+        className="pop-up__content-container__close-button"
+        id="close"
+      >
+        X
+      </button>
+      <div
+        className="pop-up__content-container__content"
+      >
+        <Component>
+          <p>
+            smth
+          </p>
+        </Component>
+      </div>
+      <button
+        className="pop-up__content-container__nav-button"
+        id="backward"
+      >
+        &lt;
+      </button>
+    </div>
+  </div>
+</PopUp>
+`;
+
+exports[`PopUp should render correctly with stage = returned 1`] = `
+<PopUp
+  stage={-1}
+>
+  <div
+    className="pop-up"
+    id="outside"
+    onClick={[Function]}
+  >
+    <div
+      className="pop-up__content-container"
+    >
+      <button
+        className="pop-up__content-container__close-button"
+        id="close"
+      >
+        X
+      </button>
+      <div
+        className="pop-up__content-container__content"
+      >
+        <Component>
+          <p>
+            smth
+          </p>
+        </Component>
+      </div>
+      <button
+        className="pop-up__content-container__nav-button"
+        id="forward"
+      >
+        &gt;
+      </button>
+    </div>
+  </div>
+</PopUp>
+`;

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CEOCard should render correctly with moch ceoInfo 1`] = `
+<CEOCard
+  ceoInfo={
+    Object {
+      "birthday": "2003-03-27T13:27:00Z",
+      "name": "name",
+      "race_id": 2,
+    }
+  }
+>
+  <p>
+    CEO name: name
+  </p>
+  <p>
+    Birthday: 3/27/2003, 3:27:00 PM
+  </p>
+  <div
+    className="ceo-card__race"
+  >
+    <p
+      className="ceo-card__race-description"
+    >
+      Race:
+    </p>
+    <Loading>
+      <span>
+        Loading...
+      </span>
+    </Loading>
+  </div>
+</CEOCard>
+`;
+
+exports[`Main should render correctly with moch store 1`] = `
+<CEOCard
+  ceoInfo={
+    Object {
+      "birthday": "2003-03-27T13:27:00Z",
+      "name": "name",
+      "race_id": 2,
+    }
+  }
+>
+  <p>
+    CEO name: name
+  </p>
+  <p>
+    Birthday: 3/27/2003, 3:27:00 PM
+  </p>
+  <div
+    className="ceo-card__race"
+  >
+    <p
+      className="ceo-card__race-description"
+    >
+      Race:
+    </p>
+    <Loading>
+      <span>
+        Loading...
+      </span>
+    </Loading>
+  </div>
+</CEOCard>
+`;

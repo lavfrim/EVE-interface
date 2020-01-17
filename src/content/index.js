@@ -1,11 +1,22 @@
 export const url = {
-    universe: {
-        fractions: 'https://esi.evetech.net/dev/universe/factions/',
-        systems: 'https://esi.evetech.net/dev/universe/systems/',
-        races: 'https://esi.evetech.net/dev/universe/races/',
-    },
-    corporation: 'https://esi.evetech.net/dev/corporations/',
-    characters: 'https://esi.evetech.net/dev/characters/',
+    sourseURL: 'https://esi.evetech.net/dev/',
+    universe: 'universe', 
+    fractions: 'factions',
+    systems: 'systems',
+    races: 'races',
+    corporations: 'corporations',
+    characters: 'characters',
+}
+
+export default function getURL(adressString, id) {
+    let fullURL = url.sourseURL;
+    adressString.split('/').forEach(urlPart => {
+        fullURL += `${url[urlPart]}/`
+    });
+    if (id) {
+        fullURL += `${id}`;
+    }
+    return fullURL;
 }
 
 export const text = {
@@ -25,4 +36,10 @@ export const text = {
         birthday: 'Birthday:',
         race: 'Race:',
     }
+}
+
+export const popUpStage = {
+    basic: 0,
+    cliked: 1,
+    returned: -1,
 }

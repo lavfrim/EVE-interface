@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fraction should render correctly with moch info, isOpen=false 1`] = `
+<Fraction
+  info={
+    Object {
+      "corporation_id": 1000035,
+      "description": "description",
+      "faction_id": 500001,
+      "name": "name",
+      "solar_system_id": 30000145,
+    }
+  }
+>
+  <div
+    className="fraction-card"
+    id={500001}
+    onClick={[Function]}
+  >
+    <p
+      className="fraction-card__name"
+    >
+      name
+    </p>
+  </div>
+</Fraction>
+`;
+
+exports[`Fraction should render correctly with moch info, isOpen=true 1`] = `
+<Fraction
+  info={
+    Object {
+      "corporation_id": 1000035,
+      "description": "description",
+      "faction_id": 500001,
+      "name": "name",
+      "solar_system_id": 30000145,
+    }
+  }
+>
+  <div
+    className="fraction-card"
+    id={500001}
+    onClick={[Function]}
+  >
+    <p
+      className="fraction-card__name"
+    >
+      name
+    </p>
+    <div
+      className="fraction-card__corp-link"
+    >
+      <p
+        className="fraction-card__corp-link-description"
+      >
+        Corporation name:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+    <p
+      className="fraction-card__description"
+    >
+      Description: description
+    </p>
+    <div
+      className="fraction-card__solar-sys"
+    >
+      <p
+        className="fraction-card__solar-sys-description"
+      >
+        System:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+  </div>
+</Fraction>
+`;
+
+exports[`Fraction should render correctly with moch info, isOpen=true 2`] = `
+<Fraction
+  info={
+    Object {
+      "corporation_id": 1000035,
+      "description": "description",
+      "faction_id": 500001,
+      "name": "name",
+      "solar_system_id": 30000145,
+    }
+  }
+>
+  <div
+    className="fraction-card"
+    id={500001}
+    onClick={[Function]}
+  >
+    <p
+      className="fraction-card__name"
+    >
+      name
+    </p>
+    <div
+      className="fraction-card__corp-link"
+    >
+      <p
+        className="fraction-card__corp-link-description"
+      >
+        Corporation name:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+    <p
+      className="fraction-card__description"
+    >
+      Description: description
+    </p>
+    <div
+      className="fraction-card__solar-sys"
+    >
+      <p
+        className="fraction-card__solar-sys-description"
+      >
+        System:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+  </div>
+</Fraction>
+`;
+
+exports[`Fraction should render correctly with moch info, isOpen=true, connection = lost 1`] = `
+<Fraction
+  info={
+    Object {
+      "corporation_id": 1000035,
+      "description": "description",
+      "faction_id": 500001,
+      "name": "name",
+      "solar_system_id": 30000145,
+    }
+  }
+>
+  <div
+    className="fraction-card"
+    id={500001}
+    onClick={[Function]}
+  >
+    <p
+      className="fraction-card__name"
+    >
+      name
+    </p>
+    <div
+      className="fraction-card__corp-link"
+    >
+      <p
+        className="fraction-card__corp-link-description"
+      >
+        Corporation name:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+    <p
+      className="fraction-card__description"
+    >
+      Description: description
+    </p>
+    <div
+      className="fraction-card__solar-sys"
+    >
+      <p
+        className="fraction-card__solar-sys-description"
+      >
+        System:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+  </div>
+</Fraction>
+`;
+
+exports[`Fraction should render correctly with moch info, isOpen=true, connet 1`] = `
+<Fraction
+  info={
+    Object {
+      "corporation_id": 1000035,
+      "description": "description",
+      "faction_id": 500001,
+      "name": "name",
+      "solar_system_id": 30000145,
+    }
+  }
+>
+  <div
+    className="fraction-card"
+    id={500001}
+    onClick={[Function]}
+  >
+    <p
+      className="fraction-card__name"
+    >
+      name
+    </p>
+    <div
+      className="fraction-card__corp-link"
+    >
+      <p
+        className="fraction-card__corp-link-description"
+      >
+        Corporation name:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+    <p
+      className="fraction-card__description"
+    >
+      Description: description
+    </p>
+    <div
+      className="fraction-card__solar-sys"
+    >
+      <p
+        className="fraction-card__solar-sys-description"
+      >
+        System:
+      </p>
+      <Loading>
+        <span>
+          Loading...
+        </span>
+      </Loading>
+    </div>
+  </div>
+</Fraction>
+`;

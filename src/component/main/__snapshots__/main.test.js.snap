@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should render correctly with error mesage 1`] = `
+<Connect(Main)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Main
+    fractionsComponentArray={
+      Array [
+        <Component />,
+        <Component />,
+        <Component />,
+      ]
+    }
+    setFractions={[Function]}
+    setMessage={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <main
+      className="main"
+    >
+      <Carousel
+        amountCards={3}
+        fractionsComponentArray={
+          Array [
+            <Component />,
+            <Component />,
+            <Component />,
+          ]
+        }
+      >
+        <section
+          className="carousel"
+        >
+          <button
+            className="carousel__button-backward"
+            onClick={[Function]}
+          >
+            &lt;
+          </button>
+          <Component
+            key="1"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="2"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="3"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <button
+            className="carousel__button-forward"
+            onClick={[Function]}
+          >
+            &gt;
+          </button>
+        </section>
+      </Carousel>
+    </main>
+  </Main>
+</Connect(Main)>
+`;
+
+exports[`Main should render correctly with mo 1`] = `
+<Connect(Main)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Main
+    fractionsComponentArray={
+      Array [
+        <Component />,
+        <Component />,
+        <Component />,
+      ]
+    }
+    setFractions={[Function]}
+    setMessage={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <main
+      className="main"
+    >
+      <Carousel
+        amountCards={3}
+        fractionsComponentArray={
+          Array [
+            <Component />,
+            <Component />,
+            <Component />,
+          ]
+        }
+      >
+        <section
+          className="carousel"
+        >
+          <button
+            className="carousel__button-backward"
+            onClick={[Function]}
+          >
+            &lt;
+          </button>
+          <Component
+            key="1"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="2"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="3"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <button
+            className="carousel__button-forward"
+            onClick={[Function]}
+          >
+            &gt;
+          </button>
+        </section>
+      </Carousel>
+    </main>
+  </Main>
+</Connect(Main)>
+`;
+
+exports[`Main should render correctly with moch store 1`] = `
+<Connect(Main)
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Main
+    fractionsComponentArray={
+      Array [
+        <Component />,
+        <Component />,
+        <Component />,
+      ]
+    }
+    setFractions={[Function]}
+    setMessage={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  >
+    <main
+      className="main"
+    >
+      <Carousel
+        amountCards={3}
+        fractionsComponentArray={
+          Array [
+            <Component />,
+            <Component />,
+            <Component />,
+          ]
+        }
+      >
+        <section
+          className="carousel"
+        >
+          <button
+            className="carousel__button-backward"
+            onClick={[Function]}
+          >
+            &lt;
+          </button>
+          <Component
+            key="1"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="2"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <Component
+            key="3"
+          >
+            <p>
+              smth
+            </p>
+          </Component>
+          <button
+            className="carousel__button-forward"
+            onClick={[Function]}
+          >
+            &gt;
+          </button>
+        </section>
+      </Carousel>
+    </main>
+  </Main>
+</Connect(Main)>
+`;

@@ -158,6 +158,13 @@ body {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
         }
+
+        &__nav-button {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            @include button-navigation;
+            border: none;
+        }
     }
 
 }
@@ -170,6 +177,10 @@ body {
 
     &__ceo-link {
         @include card-content;
+        
+        &-link {
+            @include link();
+        }
     }
 }
 

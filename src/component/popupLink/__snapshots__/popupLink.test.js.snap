@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PopupLink should render correctly with isOpen = false 1`] = `
+<PopupLink
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+>
+  <div
+    className="pop-up-link"
+    onClick={[Function]}
+  >
+    corp name
+  </div>
+</PopupLink>
+`;
+
+exports[`PopupLink should render correctly with stage = basic 1`] = `
+<PopupLink
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+>
+  <div
+    className="pop-up-link"
+    onClick={[Function]}
+  >
+    corp name
+  </div>
+  <PopUp
+    handleClickBackward={[Function]}
+    handleClickForward={[Function]}
+    handleClose={[Function]}
+    stage={0}
+  >
+    <div
+      className="pop-up"
+      id="outside"
+      onClick={[Function]}
+    >
+      <div
+        className="pop-up__content-container"
+      >
+        <button
+          className="pop-up__content-container__close-button"
+          id="close"
+        >
+          X
+        </button>
+        <div
+          className="pop-up__content-container__content"
+        >
+          <PopupCard
+            corporation={
+              Object {
+                "name": "corp name",
+              }
+            }
+            handleClickCEO={[Function]}
+            stage={0}
+          >
+            <CorporationCard
+              ceoInfo={Object {}}
+              corporation={
+                Object {
+                  "name": "corp name",
+                }
+              }
+              handleClickCEO={[Function]}
+            >
+              <p>
+                Corporation name: corp name
+              </p>
+              <div
+                className="corporation-card__ceo-link"
+              >
+                <p
+                  className="corporation-card__ceo-link-description"
+                >
+                  CEO name:
+                </p>
+                <Loading>
+                  <span>
+                    Loading...
+                  </span>
+                </Loading>
+              </div>
+              <p>
+                Member count: undefined
+              </p>
+              <p>
+                Description: undefined
+              </p>
+            </CorporationCard>
+          </PopupCard>
+        </div>
+      </div>
+    </div>
+  </PopUp>
+</PopupLink>
+`;
+
+exports[`PopupLink should render correctly with stage = clicked 1`] = `
+<PopupLink
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+>
+  <div
+    className="pop-up-link"
+    onClick={[Function]}
+  >
+    corp name
+  </div>
+  <PopUp
+    handleClickBackward={[Function]}
+    handleClickForward={[Function]}
+    handleClose={[Function]}
+    stage={1}
+  >
+    <div
+      className="pop-up"
+      id="outside"
+      onClick={[Function]}
+    >
+      <div
+        className="pop-up__content-container"
+      >
+        <button
+          className="pop-up__content-container__close-button"
+          id="close"
+        >
+          X
+        </button>
+        <div
+          className="pop-up__content-container__content"
+        >
+          <PopupCard
+            corporation={
+              Object {
+                "name": "corp name",
+              }
+            }
+            handleClickCEO={[Function]}
+            stage={1}
+          >
+            <CEOCard
+              ceoInfo={Object {}}
+            >
+              <p>
+                CEO name: undefined
+              </p>
+              <p>
+                Birthday: Invalid Date
+              </p>
+              <div
+                className="ceo-card__race"
+              >
+                <p
+                  className="ceo-card__race-description"
+                >
+                  Race:
+                </p>
+                <Loading>
+                  <span>
+                    Loading...
+                  </span>
+                </Loading>
+              </div>
+            </CEOCard>
+          </PopupCard>
+        </div>
+        <button
+          className="pop-up__content-container__nav-button"
+          id="backward"
+        >
+          &lt;
+        </button>
+      </div>
+    </div>
+  </PopUp>
+</PopupLink>
+`;
+
+exports[`PopupLink should render correctly with stage = returned 1`] = `
+<PopupLink
+  corporation={
+    Object {
+      "name": "corp name",
+    }
+  }
+>
+  <div
+    className="pop-up-link"
+    onClick={[Function]}
+  >
+    corp name
+  </div>
+  <PopUp
+    handleClickBackward={[Function]}
+    handleClickForward={[Function]}
+    handleClose={[Function]}
+    stage={-1}
+  >
+    <div
+      className="pop-up"
+      id="outside"
+      onClick={[Function]}
+    >
+      <div
+        className="pop-up__content-container"
+      >
+        <button
+          className="pop-up__content-container__close-button"
+          id="close"
+        >
+          X
+        </button>
+        <div
+          className="pop-up__content-container__content"
+        >
+          <PopupCard
+            corporation={
+              Object {
+                "name": "corp name",
+              }
+            }
+            handleClickCEO={[Function]}
+            stage={-1}
+          >
+            <CorporationCard
+              ceoInfo={Object {}}
+              corporation={
+                Object {
+                  "name": "corp name",
+                }
+              }
+              handleClickCEO={[Function]}
+            >
+              <p>
+                Corporation name: corp name
+              </p>
+              <div
+                className="corporation-card__ceo-link"
+              >
+                <p
+                  className="corporation-card__ceo-link-description"
+                >
+                  CEO name:
+                </p>
+                <Loading>
+                  <span>
+                    Loading...
+                  </span>
+                </Loading>
+              </div>
+              <p>
+                Member count: undefined
+              </p>
+              <p>
+                Description: undefined
+              </p>
+            </CorporationCard>
+          </PopupCard>
+        </div>
+        <button
+          className="pop-up__content-container__nav-button"
+          id="forward"
+        >
+          &gt;
+        </button>
+      </div>
+    </div>
+  </PopUp>
+</PopupLink>
+`;

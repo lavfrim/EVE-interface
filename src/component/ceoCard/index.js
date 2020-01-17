@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { url } from '../../content';
-import { text } from '../../content';
+import PropTypes from 'prop-types';
+import getURL, { text } from '../../content';
 import Loading from '../loading';
 
 
@@ -15,8 +15,9 @@ class CEOCard extends PureComponent {
     }
     
     getRace() {
-        const { ceo: { race_id } } = this.props;
-        const racesInfo = fetch(url.universe.races);
+        const { ceoInfo: { race_id } } = this.props;
+        const url = getURL('universe/races');
+        const racesInfo = fetch(url);
         racesInfo
             .then(response => response.json())
             .then((result) => {
@@ -31,7 +32,7 @@ class CEOCard extends PureComponent {
     }
     
     render() {
-        const { ceo: { name, birthday } } = this.props;
+        const { ceoInfo: { name, birthday } } = this.props;
         const { race } = this.state;
         const { card } = text;
         const fullDate = new Date(birthday);
@@ -54,3 +55,14 @@ class CEOCard extends PureComponent {
 }
 
 export default (CEOCard);
+
+CEOCard.propTypes = {
+    /**
+     * Object with info about CEO corporation
+     */
+    ceoInfo: PropTypes.shape({
+        name: PropTypes.string,
+        birthday: PropTypes.string,
+        race_id: PropTypes.number,
+    }),
+};

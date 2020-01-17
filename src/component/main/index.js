@@ -1,7 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { setFractionsArray, setErrorMessage } from '../../redux';
 import { connect } from 'react-redux';
-import { url } from '../../content';
+import getURL from '../../content';
 
 import Loading from '../loading';
 import Fraction from '../fraction';
@@ -26,10 +27,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-class Main extends PureComponent {
-    getFractions() {
-        const { setFractions, setMessage } = this.props;
-        const fractionsInfo = fetch(url.universe.fractions);
+function Main(props) {
+    const { fractionsComponentArray, setFractions, setMessage } = props;
+
+    function getFractions() {
+        const url = getURL('universe/fractions');
+        const fractionsInfo = fetch(url);
         fractionsInfo
         .then(response => response.json())
         .then(result => {
@@ -45,27 +48,38 @@ class Main extends PureComponent {
         });
     }
 
-    render() {
-        const { fractionsComponentArray } = this.props;
-        if (!fractionsComponentArray.length) {
-            this.getFractions();
-        }
-
-        return (
-            <main className={blockName}>
-                {fractionsComponentArray.length ? 
-                    <Carousel 
-                        fractionsComponentArray={fractionsComponentArray}
-                        amountCards={CARDS_AMOUNT}
-                    /> :
-                    <Loading />}
-                
-            </main>
-        )
+    if (!fractionsComponentArray.length) {
+        getFractions();
     }
+
+    return (
+        <main className={blockName}>
+            {fractionsComponentArray.length ? 
+                <Carousel 
+                    fractionsComponentArray={fractionsComponentArray}
+                    amountCards={CARDS_AMOUNT}
+                /> :
+                <Loading />}
+        </main>
+    );
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Main);
+
+Main.propTypes = {
+    /**
+     * Array of components for Carousel
+     */
+    fractionsComponentArray: PropTypes.arrayOf(PropTypes.node),
+    /**
+     * Action for set Array of components to redux store
+     */
+    setFractions: PropTypes.func,
+    /**
+     * Action for set error message to redux store
+     */
+    setMessage: PropTypes.func,
+};
