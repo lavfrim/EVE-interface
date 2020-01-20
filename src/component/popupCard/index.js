@@ -13,6 +13,13 @@ class PopupCard extends PureComponent {
         }
     }
 
+    componentDidMount() {
+        const { ceoInfo } = this.state;
+        if (!ceoInfo.name) {
+            this.getCEOinfo();
+        }
+    }
+
     getCEOinfo() {
         const { corporation: { ceo_id } } = this.props;
         const url = getURL('characters', ceo_id);
@@ -24,16 +31,10 @@ class PopupCard extends PureComponent {
             })
             .catch(err => window.console.log(err));
     }
-
-    
     
     render() {
         const { corporation, handleClickCEO, stage } = this.props;
         const { ceoInfo } = this.state;
-
-        if (!ceoInfo.name) {
-            this.getCEOinfo();
-        }
 
         return (
             <>
