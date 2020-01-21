@@ -13,17 +13,17 @@ const blockName = 'main';
 const CARDS_AMOUNT = 3;
 
 function mapStateToProps(state) {
-  const { fractionsComponentArray } = state;
-  return ({
-    fractionsComponentArray,
-  });
+    const { fractionsComponentArray } = state;
+    return ({
+        fractionsComponentArray,
+    });
 }
 
 function mapDispatchToProps(dispatch) {
-  return ({
-      setFractions: (arr) => dispatch(setFractionsArray(arr)),
-      setMessage: (message) => dispatch(setErrorMessage(message)),
-  });
+    return ({
+        setFractions: (arr) => dispatch(setFractionsArray(arr)),
+        setMessage: (message) => dispatch(setErrorMessage(message)),
+    });
 }
 
 
